@@ -1,0 +1,558 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, minimum-scale=1" />
+<meta name="generator" content="pdoc 0.10.0" />
+<title>PageRanker API documentation</title>
+<meta name="description" content="" />
+<link rel="preload stylesheet" as="style" href="https://cdnjs.cloudflare.com/ajax/libs/10up-sanitize.css/11.0.1/sanitize.min.css" integrity="sha256-PK9q560IAAa6WVRRh76LtCaI8pjTJ2z11v0miyNNjrs=" crossorigin>
+<link rel="preload stylesheet" as="style" href="https://cdnjs.cloudflare.com/ajax/libs/10up-sanitize.css/11.0.1/typography.min.css" integrity="sha256-7l/o7C8jubJiy74VsKTidCy1yBkRtiUGbVkYBylBqUg=" crossorigin>
+<link rel="stylesheet preload" as="style" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/10.1.1/styles/github.min.css" crossorigin>
+<style>:root{--highlight-color:#fe9}.flex{display:flex !important}body{line-height:1.5em}#content{padding:20px}#sidebar{padding:30px;overflow:hidden}#sidebar > *:last-child{margin-bottom:2cm}.http-server-breadcrumbs{font-size:130%;margin:0 0 15px 0}#footer{font-size:.75em;padding:5px 30px;border-top:1px solid #ddd;text-align:right}#footer p{margin:0 0 0 1em;display:inline-block}#footer p:last-child{margin-right:30px}h1,h2,h3,h4,h5{font-weight:300}h1{font-size:2.5em;line-height:1.1em}h2{font-size:1.75em;margin:1em 0 .50em 0}h3{font-size:1.4em;margin:25px 0 10px 0}h4{margin:0;font-size:105%}h1:target,h2:target,h3:target,h4:target,h5:target,h6:target{background:var(--highlight-color);padding:.2em 0}a{color:#058;text-decoration:none;transition:color .3s ease-in-out}a:hover{color:#e82}.title code{font-weight:bold}h2[id^="header-"]{margin-top:2em}.ident{color:#900}pre code{background:#f8f8f8;font-size:.8em;line-height:1.4em}code{background:#f2f2f1;padding:1px 4px;overflow-wrap:break-word}h1 code{background:transparent}pre{background:#f8f8f8;border:0;border-top:1px solid #ccc;border-bottom:1px solid #ccc;margin:1em 0;padding:1ex}#http-server-module-list{display:flex;flex-flow:column}#http-server-module-list div{display:flex}#http-server-module-list dt{min-width:10%}#http-server-module-list p{margin-top:0}.toc ul,#index{list-style-type:none;margin:0;padding:0}#index code{background:transparent}#index h3{border-bottom:1px solid #ddd}#index ul{padding:0}#index h4{margin-top:.6em;font-weight:bold}@media (min-width:200ex){#index .two-column{column-count:2}}@media (min-width:300ex){#index .two-column{column-count:3}}dl{margin-bottom:2em}dl dl:last-child{margin-bottom:4em}dd{margin:0 0 1em 3em}#header-classes + dl > dd{margin-bottom:3em}dd dd{margin-left:2em}dd p{margin:10px 0}.name{background:#eee;font-weight:bold;font-size:.85em;padding:5px 10px;display:inline-block;min-width:40%}.name:hover{background:#e0e0e0}dt:target .name{background:var(--highlight-color)}.name > span:first-child{white-space:nowrap}.name.class > span:nth-child(2){margin-left:.4em}.inherited{color:#999;border-left:5px solid #eee;padding-left:1em}.inheritance em{font-style:normal;font-weight:bold}.desc h2{font-weight:400;font-size:1.25em}.desc h3{font-size:1em}.desc dt code{background:inherit}.source summary,.git-link-div{color:#666;text-align:right;font-weight:400;font-size:.8em;text-transform:uppercase}.source summary > *{white-space:nowrap;cursor:pointer}.git-link{color:inherit;margin-left:1em}.source pre{max-height:500px;overflow:auto;margin:0}.source pre code{font-size:12px;overflow:visible}.hlist{list-style:none}.hlist li{display:inline}.hlist li:after{content:',\2002'}.hlist li:last-child:after{content:none}.hlist .hlist{display:inline;padding-left:1em}img{max-width:100%}td{padding:0 .5em}.admonition{padding:.1em .5em;margin-bottom:1em}.admonition-title{font-weight:bold}.admonition.note,.admonition.info,.admonition.important{background:#aef}.admonition.todo,.admonition.versionadded,.admonition.tip,.admonition.hint{background:#dfd}.admonition.warning,.admonition.versionchanged,.admonition.deprecated{background:#fd4}.admonition.error,.admonition.danger,.admonition.caution{background:lightpink}</style>
+<style media="screen and (min-width: 700px)">@media screen and (min-width:700px){#sidebar{width:30%;height:100vh;overflow:auto;position:sticky;top:0}#content{width:70%;max-width:100ch;padding:3em 4em;border-left:1px solid #ddd}pre code{font-size:1em}.item .name{font-size:1em}main{display:flex;flex-direction:row-reverse;justify-content:flex-end}.toc ul ul,#index ul{padding-left:1.5em}.toc > ul > li{margin-top:.5em}}</style>
+<style media="print">@media print{#sidebar h1{page-break-before:always}.source{display:none}}@media print{*{background:transparent !important;color:#000 !important;box-shadow:none !important;text-shadow:none !important}a[href]:after{content:" (" attr(href) ")";font-size:90%}a[href][title]:after{content:none}abbr[title]:after{content:" (" attr(title) ")"}.ir a:after,a[href^="javascript:"]:after,a[href^="#"]:after{content:""}pre,blockquote{border:1px solid #999;page-break-inside:avoid}thead{display:table-header-group}tr,img{page-break-inside:avoid}img{max-width:100% !important}@page{margin:0.5cm}p,h2,h3{orphans:3;widows:3}h1,h2,h3,h4,h5,h6{page-break-after:avoid}}</style>
+<script defer src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/10.1.1/highlight.min.js" integrity="sha256-Uv3H6lx7dJmRfRvH8TH6kJD1TSK1aFcwgx+mdg3epi8=" crossorigin></script>
+<script>window.addEventListener('DOMContentLoaded', () => hljs.initHighlighting())</script>
+</head>
+<body>
+<main>
+<article id="content">
+<header>
+<h1 class="title">Module <code>PageRanker</code></h1>
+</header>
+<section id="section-intro">
+<details class="source">
+<summary>
+<span>Expand source code</span>
+</summary>
+<pre><code class="python">from ast import excepthandler
+import numpy as np
+import pandas as pd
+from scipy import linalg
+from operator import itemgetter
+
+
+def read_data():
+    &#39;&#39;&#39;Reading the data from the text file and storing it into a matrix. Returns the matrix, number of nodes and list of edges&#39;&#39;&#39;
+    file = &#34;input.txt&#34;
+    edges = []
+
+    M = []
+    with open(file) as f:
+        lines = f.readlines()
+        nodes = int(lines[0])
+        num_edges = int(lines[1])
+        M = [[0.0 for _ in range(int(nodes))] for _ in range(int(nodes))]
+        for i in range(2, num_edges+2):
+            initial, dest = [int(x) for x in lines[i].split(&#34;,&#34;)]
+            edges.append([initial, dest])
+            M[initial - 1][dest - 1] = 1.0
+
+    return M, nodes, edges
+
+
+def outgoinglinks(M, nodes, edges):
+    &#39;&#39;&#39;Calculating outgoing links and finding number of outgoing links&#39;&#39;&#39;
+    hyperlinks = []
+    L = np.array(M)
+
+    for i in range(len(L[0])):
+        if np.sum(L[i, :]) != 0:
+            L[i, :] = L[i, :]/np.sum(L[i, :])
+        else:
+            print(&#34;No outgoing links for a node, exiting...&#34;)
+            exit()
+
+    for i in range(1, nodes+1):
+        count = 0
+        for j in edges:
+            if j[0] == i:
+                count = count+1
+        hyperlinks.append(count)
+
+    return hyperlinks, L
+
+
+def calc_PTM(nodes, edges, hyperlinks):
+    &#39;&#39;&#39;Calculating PTM with and without random teleportations&#39;&#39;&#39;
+    random_prob = 0.1
+    Trans_Matrix = []
+    RT = []
+    for i in range(nodes):
+        x = []
+        y = []
+        for j in range(nodes):
+            a = 0
+            for k in edges:
+                if k[0] == i+1 and k[1] == j+1:
+                    a = 1
+                    x.append(1/hyperlinks[i])
+                    y.append((1/hyperlinks[i]) *
+                             random_prob+((1-random_prob)/nodes))
+                    break
+            if a == 0:
+                x.append(0)
+                y.append(((1-random_prob)/nodes))
+        Trans_Matrix.append(x)
+        RT.append(y)
+
+    return Trans_Matrix, RT
+
+
+def calc_eigen_without(Trans_Matrix):
+    &#39;&#39;&#39;Using linalg module to calculate eigen values and left eigen vectors of PTM without random teleportations
+    and printing the pages sorted according to the eigenvalues&#39;&#39;&#39;
+
+    eigen, leftvector = linalg.eig(a=np.array(
+        Trans_Matrix), b=None, left=True, right=False, overwrite_a=False, overwrite_b=False, check_finite=False)
+
+    ans = []
+    max_value = 0
+    index = 0
+
+    for i, x in enumerate(eigen):
+        if x &gt; max_value:
+            max_value = x
+            index = i
+    ans = leftvector[:, index]
+
+    answer = []
+    for i, x in enumerate(ans):
+        answer.append([i+1, ans[i]])
+    answer = sorted(answer, key=itemgetter(1), reverse=True)
+
+    print(&#34;Principle Left Eigenvector of PTM without random teleportations:&#34;)
+    for i in ans:
+        print(i, end=&#34; &#34;)
+    print(&#34;\n&#34;)
+
+    print(&#34;Rankings:\nRank\tPage\tEigenvalue&#34;)
+    i = 1
+    for x in answer:
+        print(i, end=&#34;\t&#34;)
+        for j in x:
+            print(j, end=&#34;\t&#34;)
+        i = i+1
+        print(&#34;\n&#34;)
+
+
+def calc_eigen_with(RT):
+    &#39;&#39;&#39;Using linalg module to calculate eigen values and left eigen vectors of PTM with random teleportations
+    and printing the pages sorted according to the eigenvalues&#39;&#39;&#39;
+    eigen, leftvector = linalg.eig(a=np.array(
+        RT), b=None, left=True, right=False, overwrite_a=False, overwrite_b=False, check_finite=False)
+
+    ans = []
+    max_value = 0
+    index = 0
+
+    for i, x in enumerate(eigen):
+        if x &gt; max_value:
+            max_value = x
+            index = i
+    ans = leftvector[:, index]
+
+    print(&#34;Principle Left Eigenvector of PTM with random teleportations:\n&#34;)
+    for i in ans:
+        print(i, end=&#34; &#34;)
+    print(&#34;\n&#34;)
+
+    i = 1
+    answer = []
+    for x in ans:
+        answer.append([i, ans[i-1]])
+        i = i+1
+
+    answer = sorted(answer, key=itemgetter(1), reverse=True)
+    print(&#34;Rankings:\nRank\tPage\tEigenvalue&#34;)
+    i = 1
+    for x in answer:
+        print(i, end=&#34;\t&#34;)
+        for j in x:
+            print(j, end=&#34;\t&#34;)
+        i = i+1
+        print(&#34;\n&#34;)
+
+
+def power_without(nodes, Trans_Matrix):
+    &#39;&#39;&#39;Using power iteration method to calculate eigen values and left eigen vectors of PTM without random teleportations
+    and printing the pages sorted according to the eigenvalues&#39;&#39;&#39;
+
+    print(&#34;Using Power iteration method&#34;)
+    print(&#34;1. Without random teleportation&#34;)
+
+    arr = [1.0 for _ in range(int(nodes))]
+    leftvectorpower = np.array(arr)
+    eigenpower = 0.0
+    iter = 70
+    for i in range(iter):
+        leftvectorpower = np.matmul(leftvectorpower, Trans_Matrix)
+        eigenpower = linalg.norm(leftvectorpower)
+        leftvectorpower = leftvectorpower/eigenpower
+    leftvectorpower = list(leftvectorpower)
+    i = 1
+    answer = []
+    for x in leftvectorpower:
+        answer.append([i, leftvectorpower[i-1]])
+        i = i+1
+    answer = sorted(answer, key=itemgetter(1), reverse=True)
+    print(&#34;Rankings:\nRank\tPage\tEigenvalue&#34;)
+    i = 1
+    for x in answer:
+        print(i, end=&#34;\t&#34;)
+        for j in x:
+            print(j, end=&#34;\t&#34;)
+        i = i+1
+        print(&#34;\n&#34;)
+
+
+def power_with(nodes, RT):
+    &#39;&#39;&#39;Using power iteration method to calculate eigen values and left eigen vectors of PTM with random teleportations
+    and printing the pages sorted according to the eigenvalues&#39;&#39;&#39;
+    print(&#34;2. With random teleportation&#34;)
+
+    arr = [1.0 for _ in range(int(nodes))]
+    leftvectorpower = np.array(arr)
+    eigenpower = 0.0
+    iter = 70
+    for i in range(iter):
+        leftvectorpower = np.matmul(leftvectorpower, RT)
+        eigenpower = linalg.norm(leftvectorpower)
+        leftvectorpower = leftvectorpower/eigenpower
+
+    leftvectorpower = list(leftvectorpower)
+    i = 1
+    answer = []
+    for x in leftvectorpower:
+        answer.append([i, leftvectorpower[i-1]])
+        i = i+1
+    answer = sorted(answer, key=itemgetter(1), reverse=True)
+    print(&#34;Rankings:\nRank\tPage\tEigenvalue&#34;)
+    i = 1
+    for x in answer:
+        print(i, end=&#34;\t&#34;)
+        for j in x:
+            print(j, end=&#34;\t&#34;)
+        i = i+1
+        print(&#34;\n&#34;)
+
+
+M, nodes, edges = read_data()
+hyperlinks, L = outgoinglinks(M, nodes, edges)
+Trans_Matrix, RT = calc_PTM(nodes, edges, hyperlinks)
+calc_eigen_without(Trans_Matrix)
+calc_eigen_with(RT)
+power_without(nodes, Trans_Matrix)
+power_with(nodes, RT)</code></pre>
+</details>
+</section>
+<section>
+</section>
+<section>
+</section>
+<section>
+<h2 class="section-title" id="header-functions">Functions</h2>
+<dl>
+<dt id="PageRanker.calc_PTM"><code class="name flex">
+<span>def <span class="ident">calc_PTM</span></span>(<span>nodes, edges, hyperlinks)</span>
+</code></dt>
+<dd>
+<div class="desc"><p>Calculating PTM with and without random teleportations</p></div>
+<details class="source">
+<summary>
+<span>Expand source code</span>
+</summary>
+<pre><code class="python">def calc_PTM(nodes, edges, hyperlinks):
+    &#39;&#39;&#39;Calculating PTM with and without random teleportations&#39;&#39;&#39;
+    random_prob = 0.1
+    Trans_Matrix = []
+    RT = []
+    for i in range(nodes):
+        x = []
+        y = []
+        for j in range(nodes):
+            a = 0
+            for k in edges:
+                if k[0] == i+1 and k[1] == j+1:
+                    a = 1
+                    x.append(1/hyperlinks[i])
+                    y.append((1/hyperlinks[i]) *
+                             random_prob+((1-random_prob)/nodes))
+                    break
+            if a == 0:
+                x.append(0)
+                y.append(((1-random_prob)/nodes))
+        Trans_Matrix.append(x)
+        RT.append(y)
+
+    return Trans_Matrix, RT</code></pre>
+</details>
+</dd>
+<dt id="PageRanker.calc_eigen_with"><code class="name flex">
+<span>def <span class="ident">calc_eigen_with</span></span>(<span>RT)</span>
+</code></dt>
+<dd>
+<div class="desc"><p>Using linalg module to calculate eigen values and left eigen vectors of PTM with random teleportations
+and printing the pages sorted according to the eigenvalues</p></div>
+<details class="source">
+<summary>
+<span>Expand source code</span>
+</summary>
+<pre><code class="python">def calc_eigen_with(RT):
+    &#39;&#39;&#39;Using linalg module to calculate eigen values and left eigen vectors of PTM with random teleportations
+    and printing the pages sorted according to the eigenvalues&#39;&#39;&#39;
+    eigen, leftvector = linalg.eig(a=np.array(
+        RT), b=None, left=True, right=False, overwrite_a=False, overwrite_b=False, check_finite=False)
+
+    ans = []
+    max_value = 0
+    index = 0
+
+    for i, x in enumerate(eigen):
+        if x &gt; max_value:
+            max_value = x
+            index = i
+    ans = leftvector[:, index]
+
+    print(&#34;Principle Left Eigenvector of PTM with random teleportations:\n&#34;)
+    for i in ans:
+        print(i, end=&#34; &#34;)
+    print(&#34;\n&#34;)
+
+    i = 1
+    answer = []
+    for x in ans:
+        answer.append([i, ans[i-1]])
+        i = i+1
+
+    answer = sorted(answer, key=itemgetter(1), reverse=True)
+    print(&#34;Rankings:\nRank\tPage\tEigenvalue&#34;)
+    i = 1
+    for x in answer:
+        print(i, end=&#34;\t&#34;)
+        for j in x:
+            print(j, end=&#34;\t&#34;)
+        i = i+1
+        print(&#34;\n&#34;)</code></pre>
+</details>
+</dd>
+<dt id="PageRanker.calc_eigen_without"><code class="name flex">
+<span>def <span class="ident">calc_eigen_without</span></span>(<span>Trans_Matrix)</span>
+</code></dt>
+<dd>
+<div class="desc"><p>Using linalg module to calculate eigen values and left eigen vectors of PTM without random teleportations
+and printing the pages sorted according to the eigenvalues</p></div>
+<details class="source">
+<summary>
+<span>Expand source code</span>
+</summary>
+<pre><code class="python">def calc_eigen_without(Trans_Matrix):
+    &#39;&#39;&#39;Using linalg module to calculate eigen values and left eigen vectors of PTM without random teleportations
+    and printing the pages sorted according to the eigenvalues&#39;&#39;&#39;
+
+    eigen, leftvector = linalg.eig(a=np.array(
+        Trans_Matrix), b=None, left=True, right=False, overwrite_a=False, overwrite_b=False, check_finite=False)
+
+    ans = []
+    max_value = 0
+    index = 0
+
+    for i, x in enumerate(eigen):
+        if x &gt; max_value:
+            max_value = x
+            index = i
+    ans = leftvector[:, index]
+
+    answer = []
+    for i, x in enumerate(ans):
+        answer.append([i+1, ans[i]])
+    answer = sorted(answer, key=itemgetter(1), reverse=True)
+
+    print(&#34;Principle Left Eigenvector of PTM without random teleportations:&#34;)
+    for i in ans:
+        print(i, end=&#34; &#34;)
+    print(&#34;\n&#34;)
+
+    print(&#34;Rankings:\nRank\tPage\tEigenvalue&#34;)
+    i = 1
+    for x in answer:
+        print(i, end=&#34;\t&#34;)
+        for j in x:
+            print(j, end=&#34;\t&#34;)
+        i = i+1
+        print(&#34;\n&#34;)</code></pre>
+</details>
+</dd>
+<dt id="PageRanker.outgoinglinks"><code class="name flex">
+<span>def <span class="ident">outgoinglinks</span></span>(<span>M, nodes, edges)</span>
+</code></dt>
+<dd>
+<div class="desc"><p>Calculating outgoing links and finding number of outgoing links</p></div>
+<details class="source">
+<summary>
+<span>Expand source code</span>
+</summary>
+<pre><code class="python">def outgoinglinks(M, nodes, edges):
+    &#39;&#39;&#39;Calculating outgoing links and finding number of outgoing links&#39;&#39;&#39;
+    hyperlinks = []
+    L = np.array(M)
+
+    for i in range(len(L[0])):
+        if np.sum(L[i, :]) != 0:
+            L[i, :] = L[i, :]/np.sum(L[i, :])
+        else:
+            print(&#34;No outgoing links for a node, exiting...&#34;)
+            exit()
+
+    for i in range(1, nodes+1):
+        count = 0
+        for j in edges:
+            if j[0] == i:
+                count = count+1
+        hyperlinks.append(count)
+
+    return hyperlinks, L</code></pre>
+</details>
+</dd>
+<dt id="PageRanker.power_with"><code class="name flex">
+<span>def <span class="ident">power_with</span></span>(<span>nodes, RT)</span>
+</code></dt>
+<dd>
+<div class="desc"><p>Using power iteration method to calculate eigen values and left eigen vectors of PTM with random teleportations
+and printing the pages sorted according to the eigenvalues</p></div>
+<details class="source">
+<summary>
+<span>Expand source code</span>
+</summary>
+<pre><code class="python">def power_with(nodes, RT):
+    &#39;&#39;&#39;Using power iteration method to calculate eigen values and left eigen vectors of PTM with random teleportations
+    and printing the pages sorted according to the eigenvalues&#39;&#39;&#39;
+    print(&#34;2. With random teleportation&#34;)
+
+    arr = [1.0 for _ in range(int(nodes))]
+    leftvectorpower = np.array(arr)
+    eigenpower = 0.0
+    iter = 70
+    for i in range(iter):
+        leftvectorpower = np.matmul(leftvectorpower, RT)
+        eigenpower = linalg.norm(leftvectorpower)
+        leftvectorpower = leftvectorpower/eigenpower
+
+    leftvectorpower = list(leftvectorpower)
+    i = 1
+    answer = []
+    for x in leftvectorpower:
+        answer.append([i, leftvectorpower[i-1]])
+        i = i+1
+    answer = sorted(answer, key=itemgetter(1), reverse=True)
+    print(&#34;Rankings:\nRank\tPage\tEigenvalue&#34;)
+    i = 1
+    for x in answer:
+        print(i, end=&#34;\t&#34;)
+        for j in x:
+            print(j, end=&#34;\t&#34;)
+        i = i+1
+        print(&#34;\n&#34;)</code></pre>
+</details>
+</dd>
+<dt id="PageRanker.power_without"><code class="name flex">
+<span>def <span class="ident">power_without</span></span>(<span>nodes, Trans_Matrix)</span>
+</code></dt>
+<dd>
+<div class="desc"><p>Using power iteration method to calculate eigen values and left eigen vectors of PTM without random teleportations
+and printing the pages sorted according to the eigenvalues</p></div>
+<details class="source">
+<summary>
+<span>Expand source code</span>
+</summary>
+<pre><code class="python">def power_without(nodes, Trans_Matrix):
+    &#39;&#39;&#39;Using power iteration method to calculate eigen values and left eigen vectors of PTM without random teleportations
+    and printing the pages sorted according to the eigenvalues&#39;&#39;&#39;
+
+    print(&#34;Using Power iteration method&#34;)
+    print(&#34;1. Without random teleportation&#34;)
+
+    arr = [1.0 for _ in range(int(nodes))]
+    leftvectorpower = np.array(arr)
+    eigenpower = 0.0
+    iter = 70
+    for i in range(iter):
+        leftvectorpower = np.matmul(leftvectorpower, Trans_Matrix)
+        eigenpower = linalg.norm(leftvectorpower)
+        leftvectorpower = leftvectorpower/eigenpower
+    leftvectorpower = list(leftvectorpower)
+    i = 1
+    answer = []
+    for x in leftvectorpower:
+        answer.append([i, leftvectorpower[i-1]])
+        i = i+1
+    answer = sorted(answer, key=itemgetter(1), reverse=True)
+    print(&#34;Rankings:\nRank\tPage\tEigenvalue&#34;)
+    i = 1
+    for x in answer:
+        print(i, end=&#34;\t&#34;)
+        for j in x:
+            print(j, end=&#34;\t&#34;)
+        i = i+1
+        print(&#34;\n&#34;)</code></pre>
+</details>
+</dd>
+<dt id="PageRanker.read_data"><code class="name flex">
+<span>def <span class="ident">read_data</span></span>(<span>)</span>
+</code></dt>
+<dd>
+<div class="desc"><p>Reading the data from the text file and storing it into a matrix. Returns the matrix, number of nodes and list of edges</p></div>
+<details class="source">
+<summary>
+<span>Expand source code</span>
+</summary>
+<pre><code class="python">def read_data():
+    &#39;&#39;&#39;Reading the data from the text file and storing it into a matrix. Returns the matrix, number of nodes and list of edges&#39;&#39;&#39;
+    file = &#34;input.txt&#34;
+    edges = []
+
+    M = []
+    with open(file) as f:
+        lines = f.readlines()
+        nodes = int(lines[0])
+        num_edges = int(lines[1])
+        M = [[0.0 for _ in range(int(nodes))] for _ in range(int(nodes))]
+        for i in range(2, num_edges+2):
+            initial, dest = [int(x) for x in lines[i].split(&#34;,&#34;)]
+            edges.append([initial, dest])
+            M[initial - 1][dest - 1] = 1.0
+
+    return M, nodes, edges</code></pre>
+</details>
+</dd>
+</dl>
+</section>
+<section>
+</section>
+</article>
+<nav id="sidebar">
+<h1>Index</h1>
+<div class="toc">
+<ul></ul>
+</div>
+<ul id="index">
+<li><h3><a href="#header-functions">Functions</a></h3>
+<ul class="two-column">
+<li><code><a title="PageRanker.calc_PTM" href="#PageRanker.calc_PTM">calc_PTM</a></code></li>
+<li><code><a title="PageRanker.calc_eigen_with" href="#PageRanker.calc_eigen_with">calc_eigen_with</a></code></li>
+<li><code><a title="PageRanker.calc_eigen_without" href="#PageRanker.calc_eigen_without">calc_eigen_without</a></code></li>
+<li><code><a title="PageRanker.outgoinglinks" href="#PageRanker.outgoinglinks">outgoinglinks</a></code></li>
+<li><code><a title="PageRanker.power_with" href="#PageRanker.power_with">power_with</a></code></li>
+<li><code><a title="PageRanker.power_without" href="#PageRanker.power_without">power_without</a></code></li>
+<li><code><a title="PageRanker.read_data" href="#PageRanker.read_data">read_data</a></code></li>
+</ul>
+</li>
+</ul>
+</nav>
+</main>
+<footer id="footer">
+<p>Generated by <a href="https://pdoc3.github.io/pdoc" title="pdoc: Python API documentation generator"><cite>pdoc</cite> 0.10.0</a>.</p>
+</footer>
+</body>
+</html>
